@@ -1,2 +1,2 @@
 # tiks-cabocha-format
-形態素解析の結果をcabocha formatでlatexに出力するためのtiksコードを生成する
+形態素解析の結果をcabocha formatでlatexに出力するためのtikzコードを生成する
