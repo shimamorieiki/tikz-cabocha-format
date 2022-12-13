@@ -1,4 +1,4 @@
-# tiks-cabocha-format
+# tikz-cabocha-format
 形態素解析の結果をcabocha formatでlatexに出力するためのtikzコードを生成する
 
 ## 例
