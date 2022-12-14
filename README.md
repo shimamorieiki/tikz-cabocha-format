@@ -1,5 +1,5 @@
 # tikz-cabocha-format
-形態素解析の結果をcabocha formatでlatexに出力するためのtikzコードを生成する
+係り受け解析の結果をcabocha formatでlatexに出力するためのtikzコードを生成する
 
 ## 例
 
