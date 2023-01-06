@@ -30,12 +30,14 @@ List[見出し,文節番号(0-index),係り先文節番号(0-index)]
 
 ### 実行コマンド
 ```
-python3 main.py [ファイルのパス]
+python3 main.py [ファイルのパス] [オプション(行の高さ)]
 ```
+
+行の高さは `-xlarge`, `-large`, `-middle`, `-small`の四種(省略時は`"-xlarge"`相当)
 
 実行例
 ```
-python3 main.py ./csvs/sample.csv
+python3 main.py ./csvs/sample.csv -xlarge
 ```
 
 ### 出力コード
