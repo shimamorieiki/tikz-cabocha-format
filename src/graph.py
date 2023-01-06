@@ -55,10 +55,14 @@ class Graph:
         # グラフに書くときのノード初期化
 
         for node in self.nodes:
-            node.start_x = float(node.depth) * self.line_height
-            node.start_y = float(len(self.nodes) - node.bnst_id - 1) * self.line_height
-            node.end_x = float(node.depth) * self.line_height
-            node.end_y = float(len(self.nodes) - node.bnst_id - 1) * self.line_height
+            node.start_x = round(float(node.depth) * self.line_height, 2)
+            node.start_y = round(
+                float(len(self.nodes) - node.bnst_id - 1) * self.line_height, 2
+            )
+            node.end_x = round(float(node.depth) * self.line_height, 2)
+            node.end_y = round(
+                float(len(self.nodes) - node.bnst_id - 1) * self.line_height, 2
+            )
 
         # ノードの数値更新
         for node in self.nodes:
@@ -67,10 +71,14 @@ class Graph:
                 continue
 
             # 終点のx座標 = 係り先の始点のx座標 - self.line_height * 0.5
-            node.end_x = self.nodes[node.parent_id].start_x - self.line_height * 0.5
+            node.end_x = round(
+                self.nodes[node.parent_id].start_x - self.line_height / 2, 2
+            )
 
             # 終点のy座標 = 係り先の始点のy座標 + self.line_height * 0.5
-            node.end_y = self.nodes[node.parent_id].start_y + self.line_height * 0.5
+            node.end_y = round(
+                self.nodes[node.parent_id].start_y + self.line_height / 2, 2
+            )
 
         # 重複している縦線を削除する
         # 各係り先毎で、最初の要素だけ縦線を残す
