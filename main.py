@@ -23,11 +23,28 @@ def get_data(file_path: str) -> List[Tuple[str, int, int]]:
 def main() -> None:
     """_summary_"""
 
+    # ノード間の高さのデフォルト値
+    line_height_options: dict[str, float] = {
+        "-xlarge": 1.0,
+        "-large": 0.8,
+        "-middle": 0.6,
+        "-small": 0.4,
+    }
+
+    # ノード間の高さのデフォルト値(xlarge相当)
+    default_line_heigth: float = 1.0
+
     # コマンドライン引数からcsvのファイルを受け取る
     data: List[Tuple[str, int, int]] = get_data(file_path=sys.argv[1])
 
+    # グラフの高さを指定する
+    line_height: float = default_line_heigth
+    for key, value in line_height_options.items():
+        if key in sys.argv:
+            line_height = value
+
     # cabocha-formatのtikzコードを出力する
-    Graph(data=data).print_tikz()
+    Graph(data=data, line_height=line_height).print_tikz()
 
 
 if __name__ == "__main__":

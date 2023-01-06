@@ -8,8 +8,9 @@ from .node import Node
 class Graph:
     """_summary_"""
 
-    def __init__(self, data: List[Tuple[str, int, int]]) -> None:
+    def __init__(self, data: List[Tuple[str, int, int]], line_height: float) -> None:
         self.nodes: List[Node] = self.init_nodes(data=data)
+        self.line_height = line_height
 
     def init_nodes(self, data: List[Tuple[str, int, int]]) -> List[Node]:
         """_summary_
@@ -54,10 +55,10 @@ class Graph:
         # グラフに書くときのノード初期化
 
         for node in self.nodes:
-            node.start_x = float(node.depth)
-            node.start_y = float(len(self.nodes) - node.bnst_id - 1)
-            node.end_x = float(node.depth)
-            node.end_y = float(len(self.nodes) - node.bnst_id - 1)
+            node.start_x = float(node.depth) * self.line_height
+            node.start_y = float(len(self.nodes) - node.bnst_id - 1) * self.line_height
+            node.end_x = float(node.depth) * self.line_height
+            node.end_y = float(len(self.nodes) - node.bnst_id - 1) * self.line_height
 
         # ノードの数値更新
         for node in self.nodes:
@@ -65,11 +66,11 @@ class Graph:
             if node.parent_id == -1:
                 continue
 
-            # 終点のx座標 = 係り先の始点のx座標 - 0.5
-            node.end_x = self.nodes[node.parent_id].start_x - 0.5
+            # 終点のx座標 = 係り先の始点のx座標 - self.line_height * 0.5
+            node.end_x = self.nodes[node.parent_id].start_x - self.line_height * 0.5
 
-            # 終点のy座標 = 係り先の始点のy座標 + 0.5
-            node.end_y = self.nodes[node.parent_id].start_y + 0.5
+            # 終点のy座標 = 係り先の始点のy座標 + self.line_height * 0.5
+            node.end_y = self.nodes[node.parent_id].start_y + self.line_height * 0.5
 
         # 重複している縦線を削除する
         # 各係り先毎で、最初の要素だけ縦線を残す
