@@ -53,4 +53,18 @@ python3 main.py ./csvs/sample.csv -xlarge
 
 ### Latex 出力例
 
-![image](https://user-images.githubusercontent.com/44014265/207295760-d0f4ca34-fe63-4f61-b4ea-535dad855047.png)
+#### -xlarge
+![xlarge](https://user-images.githubusercontent.com/44014265/211229082-b40e5faa-3b02-40cb-a31f-a39537435e0f.png)
+
+
+#### -large
+![large](https://user-images.githubusercontent.com/44014265/211229094-a57d1f49-e035-4ffc-822e-d72870b9cefe.png)
+
+
+#### -middle
+![middle](https://user-images.githubusercontent.com/44014265/211229099-61f5be08-4bea-4dcd-a006-8628dbfea258.png)
+
+
+#### -small
+![small](https://user-images.githubusercontent.com/44014265/211229115-dde43ac1-4202-432f-8375-7241c2d8d4fc.png)
+
